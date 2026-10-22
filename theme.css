@@ -5,8 +5,28 @@
   #events .grid > :last-child:nth-child(odd) { grid-column: 1 / -1; width: calc(50% - 1rem); justify-self: center; }
 }
 
-/* Hero arch: sides extend down over the whole hero and fade out so no outline crosses the text */
-.pointer-events-none.absolute.inset-x-0.top-0.z-\[5\] > svg {
-  -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 45%, transparent 100%);
-}
+/* ---- Hindu wedding palette: maroon + gold on ivory (overrides the green utility classes) ---- */
+.text-emerald-950 { color: #4a0c18; }
+.text-emerald-900 { color: #5c0f1e; }
+.text-emerald-800 { color: #7a1a2a; }
+.text-emerald-800\/80 { color: rgba(122,26,42,.8); }
+.text-emerald-800\/90 { color: rgba(122,26,42,.9); }
+.text-emerald-700 { color: #8c2233; }
+.text-emerald-700\/80 { color: rgba(140,34,51,.8); }
+.bg-emerald-600 { background-color: #8c1c2f; }
+.hover\:bg-emerald-700:hover { background-color: #6f1424; }
+.bg-emerald-500 { background-color: #b8893a; }
+.bg-emerald-100 { background-color: #f3dcc0; }
+.bg-emerald-200 { background-color: #e9c9a0; }
+.bg-emerald-300 { background-color: #d9a441; }
+.border-emerald-200 { border-color: #d9b36a; }
+.border-emerald-200\/70 { border-color: rgba(217,179,106,.7); }
+.bg-emerald-50\/70 { background-color: rgba(255,246,232,.7); }
+.bg-emerald-50\/90 { background-color: rgba(255,246,232,.9); }
+.decoration-emerald-300 { text-decoration-color: #d9b36a; }
+.hover\:decoration-emerald-500:hover { text-decoration-color: #b8893a; }
+/* names: gold ampersand like the reference card */
+h1 > span:nth-child(2) { color: #b8893a; }
+/* room for the lotus row and garland inside the hero frame */
+header.relative.z-10.mx-auto { padding-bottom: 5.5rem; }
+@media (min-width: 768px) { header.relative.z-10.mx-auto { padding-top: 4.25rem; } }
