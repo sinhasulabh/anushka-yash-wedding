@@ -1,0 +1,6 @@
+/* Backdrop: ivory & red (Hindu wedding palette). Original CSS is untouched. */
+.min-h-screen.bg-gradient-to-b { background-image: linear-gradient(to bottom, #fffbf2, #fbf1e1 50%, #f6d9d2); }
+/* Third event card (Reception): centre it under the two-column grid */
+@media (min-width: 768px) {
+  #events .grid > :last-child:nth-child(odd) { grid-column: 1 / -1; width: calc(50% - 1rem); justify-self: center; }
+}
