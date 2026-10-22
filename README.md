@@ -1,3 +1,3 @@
-# Anushka & Yash — Wedding Invitation
+# Anushka & Yash - Wedding Invitation
 
-Static wedding invitation site (Sangeet & Vivah), served via GitHub Pages.
+Static wedding invitation site (Sangeet, Vivah & Reception).
