@@ -1,5 +1,11 @@
 /* Backdrop: ivory & red (Hindu wedding palette). Original CSS is untouched. */
-.min-h-screen.bg-gradient-to-b { background-image: linear-gradient(to bottom, #fffbf2, #fbf1e1 50%, #f6d9d2); }
+/* Quiet jaali lattice (fixed 56px tile) over the ivory-to-blush gradient */
+.min-h-screen.bg-gradient-to-b {
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23ecdcc4' stroke-width='.8'%3E%3Ccircle cx='0' cy='0' r='28'/%3E%3Ccircle cx='56' cy='0' r='28'/%3E%3Ccircle cx='0' cy='56' r='28'/%3E%3Ccircle cx='56' cy='56' r='28'/%3E%3C/g%3E%3Ccircle cx='28' cy='28' r='1.2' fill='%23e8cf9f'/%3E%3C/svg%3E"),
+    linear-gradient(to bottom, #fffbf2, #fbf1e1 50%, #f6d9d2);
+  background-size: 56px 56px, auto;
+}
 /* Third event card (Reception): centre it under the two-column grid */
 @media (min-width: 768px) {
   #events .grid > :last-child:nth-child(odd) { grid-column: 1 / -1; width: calc(50% - 1rem); justify-self: center; }
@@ -8,11 +14,11 @@
 /* ---- Hindu wedding palette: maroon + gold on ivory (overrides the green utility classes) ---- */
 .text-emerald-950 { color: #4a0c18; }
 .text-emerald-900 { color: #5c0f1e; }
-.text-emerald-800 { color: #7a1a2a; }
-.text-emerald-800\/80 { color: rgba(122,26,42,.8); }
-.text-emerald-800\/90 { color: rgba(122,26,42,.9); }
-.text-emerald-700 { color: #8c2233; }
-.text-emerald-700\/80 { color: rgba(140,34,51,.8); }
+.text-emerald-800 { color: #5c0f1e; }
+.text-emerald-800\/80 { color: #6a1626; }
+.text-emerald-800\/90 { color: #5c0f1e; }
+.text-emerald-700 { color: #6a1626; }
+.text-emerald-700\/80 { color: #6a1626; }
 .bg-emerald-600 { background-color: #8c1c2f; }
 .hover\:bg-emerald-700:hover { background-color: #6f1424; }
 .bg-emerald-500 { background-color: #b8893a; }
@@ -30,3 +36,17 @@ h1 > span:nth-child(2) { color: #b8893a; }
 /* room for the lotus row and garland inside the hero frame */
 header.relative.z-10.mx-auto { padding-bottom: 5.5rem; }
 @media (min-width: 768px) { header.relative.z-10.mx-auto { padding-top: 4.25rem; } }
+
+/* Diyas at the hero base (moved out of the fixed layer) */
+.lantern { width: 36px; height: 16px; position: relative; border-radius: 2px 2px 36px 36px / 2px 2px 18px 18px;
+  background: linear-gradient(180deg,#c8602a,#8f3a1a); box-shadow: 0 4px 14px 2px rgba(255,160,60,.45); }
+.lantern:before { content:""; position:absolute; left:50%; bottom:14px; width:10px; height:20px; transform:translateX(-50%);
+  border-radius:50% 50% 50% 50% / 65% 65% 35% 35%; background:radial-gradient(ellipse at 50% 70%, #fff3b0, #ffb030 55%, rgba(255,120,30,0) 100%);
+  box-shadow:0 0 16px 6px rgba(255,190,70,.55); animation: flicker 1.6s ease-in-out infinite alternate; }
+@keyframes flicker { 0% { transform: translateX(-50%) scaleY(.92); } 100% { transform: translateX(-50%) scaleY(1.08); } }
+
+/* Respect reduced-motion: no animation, no falling petals */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  [style*="moteFloat"] { display: none !important; }
+}
