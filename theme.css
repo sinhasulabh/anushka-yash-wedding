@@ -4,3 +4,9 @@
 @media (min-width: 768px) {
   #events .grid > :last-child:nth-child(odd) { grid-column: 1 / -1; width: calc(50% - 1rem); justify-self: center; }
 }
+
+/* Hero arch: sides extend down over the whole hero and fade out so no outline crosses the text */
+.pointer-events-none.absolute.inset-x-0.top-0.z-\[5\] > svg {
+  -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 45%, transparent 100%);
+}
